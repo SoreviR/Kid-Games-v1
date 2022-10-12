@@ -1,0 +1,87 @@
+
+.navbar-brand{
+    padding-left: 40px;
+    font-size: 2.5rem;
+}
+
+.navbar-nav{
+    padding-right: 30px;
+}
+
+.nav-item {
+    padding: 18px;
+    font-size: 1.5rem;
+}
+
+.age-selection{
+    padding: 100px 50px;
+}
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.cards-list .linking{
+    margin: 30px auto;
+    text-decoration: none;
+}
+  
+.card {
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;    
+}
+  
+.card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+  
+.card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+}
+  
+.card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+}
+  
+.card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+  
+.title-white {
+    color: white;
+}
+  
+.title-black {
+    color: black;
+}
+
+#footer{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.footer-icon {
+    margin: 20px 10px;
+}
