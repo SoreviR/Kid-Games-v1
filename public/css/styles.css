@@ -77,6 +77,12 @@
     color: black;
 }
 
+.game-page{
+    width: 50%;
+    margin: 30px auto;
+    
+}
+
 #footer{
     text-align: center;
     padding-top: 50px;

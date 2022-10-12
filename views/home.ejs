@@ -1,6 +1,20 @@
 <%- include("partials/header"); -%>
 
 
+<div class="age-selection">
+    <h3>Select age:</h3>
+    <form action="/" method="post">
+        <button type="submit" name="button" value="all" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2rem;">All</button>
+        <button type="submit" name="button" value="buttonOne" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2rem;">3-5</button>
+        <button type="submit" name="button" value="buttonTwo" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2rem;">6-8</button>
+        <button type="submit" name="button" value="buttonThree" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2rem;">9-11</button>
+        <button type="submit" name="button" value="buttonFour" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 2rem;">12-14</button>
+    </form>
+    
+</div>
+
+
+
 <div class="cards-list container">
 
     <% newGame.forEach(function(game){ %>

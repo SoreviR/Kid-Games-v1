@@ -75,7 +75,7 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res){
   const age = req.body.button;
-  console.log(age);
+  
 
   if (age === "all"){
     res.redirect("/");
@@ -83,7 +83,7 @@ app.post("/", function(req, res){
   }else if (age === "buttonOne"){
     Game.find({$or:[{age: 3}, {age:4}, {age:5}]}, function(err, foundGame){
       if (!err){
-        console.log(foundGame);
+        
         res.render("home", {newGame: foundGame});
       };
     });
@@ -91,7 +91,7 @@ app.post("/", function(req, res){
   }else if (age === "buttonTwo"){
     Game.find({$or:[{age: 6}, {age:7}, {age:8}]}, function(err, foundGame){
       if (!err){
-        console.log(foundGame);
+        
         res.render("home", {newGame: foundGame});
       };
     });
@@ -99,7 +99,7 @@ app.post("/", function(req, res){
   }else if (age === "buttonThree"){
     Game.find({$or:[{age: 9}, {age:10}, {age:11}]}, function(err, foundGame){
       if (!err){
-        console.log(foundGame);
+        
         res.render("home", {newGame: foundGame});
       };
     });
@@ -107,22 +107,34 @@ app.post("/", function(req, res){
   }else{
     Game.find({$or:[{age: 12}, {age:13}, {age:14}]}, function(err, foundGame){
       if (!err){
-        console.log(foundGame);
+        
         res.render("home", {newGame: foundGame});
       };
     });
   }  
 });
 
-app.post("/", function(req, res){
+app.get("/:gameId", function(req, res){
+  const requestedId = req.params.gameId;
 
+  Game.findOne({_id:requestedId}, function(err, foundGame){
+
+    if(!err){
+
+      const storedId = foundGame.id;      
+
+      if (storedId === requestedId) {
+        res.render("game", {
+          title: foundGame.title,
+          age: foundGame.age,
+          content: foundGame.content
+        });
+    }    
+    }
+  });
 });
 
 app.listen(3000, function(){
   console.log("Server started on port 3000.");
 });
-
-
-
-
 
