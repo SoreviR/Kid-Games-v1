@@ -17,7 +17,8 @@ mongoose.connect("mongodb://localhost:27017/GamesDB", {useNewUrlParser: true});
 const gamesSchema = {
   title: String,
   age: Number,
-  content: String
+  content: String,
+  img: String
 };
 
 const Game = mongoose.model("Game", gamesSchema);
@@ -26,25 +27,29 @@ const Game = mongoose.model("Game", gamesSchema);
 const game1 = new Game({
   title: "Game 1",
   age: 4,
-  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!"
+  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!",
+  img: "images/card 1.png"
 });
 
 const game2 = new Game({
   title: "Game 2",
   age: 6,
-  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!"
+  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!",
+  img: "images/card 2.png"
 });
 
 const game3 = new Game({
   title: "Game 3",
-  age: 6,
-  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!"
+  age: 9,
+  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!",
+  img: "images/card 3.png"
 });
 
 const game4 = new Game({
   title: "Game 4",
-  age: 6,
-  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!"
+  age: 13,
+  content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nulla beatae labore qui. Quaerat laudantium consequuntur nam! Obcaecati harum corporis quibusdam ipsum id voluptates vero saepe quaerat neque quod, odit aspernatur sunt esse accusantium fugiat atque corrupti nam dicta adipisci optio. Ea, esse? Dolorum incidunt et nemo, maiores ducimus natus!",
+  img: "images/card 4.png"
 });
 
 let gamesList = [game1, game2, game3, game4];
@@ -127,7 +132,8 @@ app.get("/:gameId", function(req, res){
         res.render("game", {
           title: foundGame.title,
           age: foundGame.age,
-          content: foundGame.content
+          content: foundGame.content,
+          img: foundGame.img
         });
     }    
     }
