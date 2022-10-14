@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+
+
+<div class="cards-list container">
+
+    <% newGame.forEach(function(game){ %>
+        <a class="linking" href="/<%= game._id %>">
+            <div class="card">
+                <div class="card_image"> 
+                    <img src="<%= game.img %>" />
+                </div>
+                <div class="card_title title-white">
+                    <p> <%= game.title %> </p>
+                </div>
+            </div>
+        </a>
+    <% }); %>
+</div>
+
+
+<%- include("partials/footer"); -%>

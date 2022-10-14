@@ -76,6 +76,15 @@ app.get("/", function(req, res) {
 });
 
 
+app.get("/gamelist", function(req, res){
+  Game.find({}, function(err, foundGame){
+
+    if (!err){
+      res.render("gamelist", {newGame: foundGame});
+    }
+  });
+});
+
 
 
 app.post("/", function(req, res){
@@ -139,6 +148,8 @@ app.get("/:gameId", function(req, res){
     }
   });
 });
+
+
 
 app.listen(3000, function(){
   console.log("Server started on port 3000.");
